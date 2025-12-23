@@ -140,7 +140,7 @@
 									 &trans     &trans    &trans    &trans    &trans     &trans    &kp DEL     &trans
 			>;
 
-			sensor-bindings =
+			sensor-bindings =o
 				<&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +
 				<&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
 		};

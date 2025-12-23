@@ -112,10 +112,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
-                //<&mouse_scroll SCRL_LEFT SCRL_RIGHT>,
-				//<&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&mouse_scroll SCRL_LEFT SCRL_RIGHT>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         layer_2 {

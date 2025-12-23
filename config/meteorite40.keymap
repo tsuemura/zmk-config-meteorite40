@@ -166,9 +166,9 @@
         layer_5 {
             display-name = "EMACS";
             bindings = <
-                &none        &kp LC(X)   &kp END      &none        &none                                 &kp LC(V)    &none       &none       &none      &kp UP
-                &none        &kp HOME    &kp DEL      &kp RIGHT    &none                                 &none        &none       &kp LS(END) &none      &none
-                &none        &none       &none        &none        &kp LEFT     &none        &none       &kp DOWN     &none       &none       &none      &none
+                &kp LC(Q)    &kp LC(X)   &kp END      &kp LC(R)    &kp LC(T)                             &kp LC(V)    &kp LC(U)   &kp LC(I)   &kp LC(O)  &kp UP
+                &none        &kp HOME    &kp DEL      &kp RIGHT    &kp LC(G)                             &kp LC(H)    &kp LC(J)   &kp LS(END) &kp LC(L)  &kp LC(MINUS)
+                &kp LC(Z)    &kp LC(X)   &kp LC(C)    &kp LC(V)    &kp LEFT     &none        &none       &kp DOWN     &kp LC(M)   &kp LC(COMMA) &kp LC(DOT) &kp LC(SLASH)
                                          &trans       &trans       &trans       &trans       &trans      &trans       &trans      &trans
             >;
 

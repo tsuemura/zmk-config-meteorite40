@@ -89,7 +89,7 @@
             display-name = "BASE";
             bindings = <
                 &kp Q        &kp W       &kp E        &kp R        &kp T                                 &kp Y        &kp U       &kp I       &kp O  &kp P
-                &mt LSHIFT A &kp S       &kp D        &kp F        &kp G                                 &kp H        &kp J       &kp K       &kp L  &kp MINUS
+                &lt 5 A      &kp S       &kp D        &kp F        &kp G                                 &kp H        &kp J       &kp K       &kp L  &kp MINUS
                 &kp Z        &kp X       &kp C        &kp V        &kp B        &mkp MB1     &mkp MB2    &kp N        &kp M       &kp COMMA   &kp DOT  &lt 4 SLASH
                                     &kp LWIN  &mt LCTRL TAB  &mt LSHIFT SPACE  &lt 1 SPACE  &lt 2 ENTER  &lt 2 ENTER  &lt 3 BSPC  &kp RALT
             >;
@@ -156,6 +156,21 @@
 				&cust_cfg CCFG_SAVE    &cust_cfg CCFG_RESET   &none                   &none                   &none                    &none &none      &bootloader    &none           &none         &none         &none
 												                                                 &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans
 			>;
+
+            sensor-bindings =
+                <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
+
+        };
+
+        layer_5 {
+            display-name = "EMACS";
+            bindings = <
+                &none        &kp LC(X)   &kp END      &none        &none                                 &kp LC(V)    &none       &none       &none      &kp UP
+                &none        &kp HOME    &kp DEL      &kp RIGHT    &none                                 &none        &none       &kp LS(END) &none      &none
+                &none        &none       &none        &none        &kp LEFT     &none        &none       &kp DOWN     &none       &none       &none      &none
+                                         &trans       &trans       &trans       &trans       &trans      &trans       &trans      &trans
+            >;
 
             sensor-bindings =
                 <&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,

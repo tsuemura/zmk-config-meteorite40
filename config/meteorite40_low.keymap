@@ -19,6 +19,14 @@
 };
 
 / {
+    macros {
+        kill_line: kill_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END) &kp DEL>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -139,7 +147,7 @@
             display-name = "EMACS";
             bindings = <
                 &kp LC(Q)    &kp LC(BSPC)   &kp END      &kp LC(R)    &kp LC(T)                             &kp LC(V)    &kp LC(U)   &kp LC(I)   &kp LC(O)  &kp UP
-                &none        &kp HOME    &kp DEL      &kp RIGHT    &kp LC(G)                             &kp BSPC     &kp LC(J)   &kp LS(END) &kp LC(L)  &kp LC(MINUS)
+                &none        &kp HOME    &kp DEL      &kp RIGHT    &kp LC(G)                             &kp BSPC     &kp LC(J)   &kill_line  &kp LC(L)  &kp LC(MINUS)
                 &kp LC(Z)    &kp LC(X)   &kp LC(C)    &kp LC(V)    &kp LEFT     &none        &none       &kp DOWN     &kp ENTER   &kp LC(COMMA) &kp LC(DOT) &kp LC(SLASH)
                                          &trans       &trans       &trans       &trans       &trans      &trans       &trans      &trans
             >;

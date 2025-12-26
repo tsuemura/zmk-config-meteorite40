@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
-    flavor = "tap-preferred"; // change hold to tap
+    flavor = "balanced"; // change hold to tap
     tapping-term-ms = <200>;
     quick-tap-ms = <150>; // change 200 to 150
 };

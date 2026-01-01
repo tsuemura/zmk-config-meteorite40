@@ -25,6 +25,16 @@
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp DEL>;
         };
+        ctrl_click: ctrl_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp MB1>, <&macro_release &kp LCTRL>;
+        };
+        ctrl_rclick: ctrl_rclick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp MB2>, <&macro_release &kp LCTRL>;
+        };
     };
 
     combos {
@@ -112,10 +122,10 @@
         layer_5 {
             display-name = "EMACS";
             bindings = <
-&kp LC(Q)  &kp LC(BSPC)  &kp END    &kp LC(R)  &kp LC(T)  &kp LC(V)  &kp LC(U)  &kp LC(I)   &kp LC(O)  &kp UP
-&none      &kp HOME      &kp DEL    &kp RIGHT  &kp LC(G)  &kp BSPC   &kp LC(J)  &kill_line  &kp LC(L)  &kp LC(MINUS)
-&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LEFT   &none      &none      &kp DOWN    &kp ENTER  &kp LC(COMMA)  &kp LC(DOT)  &kp LC(SLASH)
-&trans     &trans        &trans     &trans     &trans     &trans     &trans     &trans
+&kp LC(Q)  &kp LC(BSPC)  &kp END    &kp LC(R)  &kp LC(T)  &kp LC(V)     &kp LC(U)  &kp LC(I)   &kp LC(O)  &kp UP
+&none      &kp HOME      &kp DEL    &kp RIGHT  &kp LC(G)  &kp BSPC      &kp LC(J)  &kill_line  &kp LC(L)  &kp LC(MINUS)
+&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LEFT   &ctrl_click   &ctrl_rclick  &kp DOWN    &kp ENTER  &kp LC(COMMA)  &kp LC(DOT)  &kp LC(SLASH)
+&trans     &trans        &trans     &trans     &trans     &trans        &trans     &trans
             >;
         };
 

@@ -25,15 +25,29 @@
             #binding-cells = <0>;
             bindings = <&kp LS(END) &kp DEL>;
         };
+
         ctrl_click: ctrl_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp MB1>, <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&mkp MB1>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
+
         ctrl_rclick: ctrl_rclick {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp MB2>, <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&mkp MB2>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
     };
 
@@ -105,7 +119,7 @@
 &kp Q     &kp W      &kp E             &kp R        &kp T             &kp Y        &kp U      &kp I       &kp O  &kp P
 &lt 2 A   &kp S      &kp D             &kp F        &kp G             &kp H        &kp J      &kp K       &kp L  &kp SEMICOLON
 &kp Z     &kp X      &kp C             &kp V        &kp B             &mkp MB1     &mkp MB2   &kp N       &kp M  &kp COMMA      &kp DOT  &lt 4 SLASH
-&kp LALT  &kp LCTRL  &mt LSHIFT SPACE  &lt 3 TILDE  &mt LSHIFT SPACE  &lt 1 MINUS  &kp ENTER  &kp DELETE
+&kp LALT  &kp LCTRL  &mt LSHIFT SPACE  &lt 1 TILDE  &mt LSHIFT SPACE  &lt 3 MINUS  &kp ENTER  &kp DELETE
             >;
         };
 
@@ -122,10 +136,10 @@
         layer_5 {
             display-name = "EMACS";
             bindings = <
-&kp LC(Q)  &kp LC(BSPC)  &kp END    &kp LC(R)  &kp LC(T)  &kp LC(V)     &kp LC(U)  &kp LC(I)   &kp LC(O)  &kp UP
-&none      &kp HOME      &kp DEL    &kp RIGHT  &kp LC(G)  &kp BSPC      &kp LC(J)  &kill_line  &kp LC(L)  &kp LC(MINUS)
-&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LEFT   &ctrl_click   &ctrl_rclick  &kp DOWN    &kp ENTER  &kp LC(COMMA)  &kp LC(DOT)  &kp LC(SLASH)
-&trans     &trans        &trans     &trans     &trans     &trans        &trans     &trans
+&kp LC(Q)  &kp LC(BSPC)  &kp END    &kp LC(R)  &kp LC(T)  &kp LC(V)    &kp LC(U)     &kp LC(I)   &kp LC(O)  &kp UP
+&none      &kp HOME      &kp DEL    &kp RIGHT  &kp LC(G)  &kp BSPC     &kp LC(J)     &kill_line  &kp LC(L)  &kp LC(MINUS)
+&kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LEFT   &ctrl_click  &ctrl_rclick  &kp DOWN    &kp ENTER  &kp LC(COMMA)  &kp LC(DOT)  &kp LC(SLASH)
+&trans     &trans        &trans     &trans     &trans     &trans       &trans        &trans
             >;
         };
 

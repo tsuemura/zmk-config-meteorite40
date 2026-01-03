@@ -156,10 +156,10 @@
         layer_3 {
             display-name = "FUNCTION";
             bindings = <
-&none     &kp UP_ARROW  &none      &none   &none   &kp LC(TAB)   &kp PAGE_UP       &kp PAGE_DOWN  &kp LS(LC(TAB))  &kp HOME
-&kp LEFT  &kp DOWN      &kp RIGHT  &none   &none   &kp LC(LEFT)  &kp LC(UP_ARROW)  &kp LC(DOWN)   &kp LC(RIGHT)    &kp END
-&kp F1    &kp F2        &kp F3     &kp F4  &kp F5  &kp F11       &kp F12           &kp F6         &kp F7           &kp F8    &kp F9  &kp F10
-&trans    &trans        &trans     &trans  &trans  &trans        &trans            &trans
+&none     &kp UP_ARROW  &none      &none   &none   &kp LC(LS(TAB))  &kp PAGE_UP       &kp PAGE_DOWN  &kp LC(TAB)    &kp HOME
+&kp LEFT  &kp DOWN      &kp RIGHT  &none   &none   &kp LC(LEFT)     &kp LC(UP_ARROW)  &kp LC(DOWN)   &kp LC(RIGHT)  &kp END
+&kp F1    &kp F2        &kp F3     &kp F4  &kp F5  &kp F11          &kp F12           &kp F6         &kp F7         &kp F8    &kp F9  &kp F10
+&trans    &trans        &trans     &trans  &trans  &trans           &trans            &trans
             >;
         };
 

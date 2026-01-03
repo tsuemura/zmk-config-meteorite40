@@ -112,6 +112,11 @@
             bindings = <&kp LA(F4)>;
             key-positions = <1 32>;
         };
+
+        snipping_tool {
+            bindings = <&kp LS(LG(S))>;
+            key-positions = <25 26>;
+        };
     };
 
     keymap {

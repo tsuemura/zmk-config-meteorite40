@@ -19,6 +19,24 @@
 };
 
 / {
+    behaviors {
+        td_vim_enter: td_vim_enter {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp J>, <&to 5>;
+        };
+
+        td_vim_exit: td_vim_exit {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp J>, <&to 0>;
+        };
+    };
+};
+
+/ {
     macros {
         kill_line: kill_line {
             compatible = "zmk,behavior-macro";
@@ -48,6 +66,48 @@
                 <&mkp MB2>,
                 <&macro_release>,
                 <&kp LCTRL>;
+        };
+
+        vim_dd: vim_dd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp DEL &kp DEL>;
+        };
+
+        vim_yy: vim_yy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp END>;
+        };
+
+        vim_o: vim_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp ENTER &to 0>;
+        };
+
+        vim_O: vim_O {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp ENTER &kp UP &to 0>;
+        };
+
+        vim_a: vim_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT &to 0>;
+        };
+
+        vim_A: vim_A {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &to 0>;
+        };
+
+        vim_I: vim_I {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &to 0>;
         };
     };
 
@@ -117,6 +177,7 @@
             bindings = <&kp LS(LG(S))>;
             key-positions = <25 26>;
         };
+
     };
 
     keymap {
@@ -126,10 +187,10 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-&kp Q     &kp W      &kp E             &kp R        &kp T             &kp Y        &kp U      &kp I       &kp O  &kp P
-&lt 2 A   &kp S      &kp D             &kp F        &kp G             &kp H        &kp J      &kp K       &kp L  &kp SEMICOLON
-&kp Z     &kp X      &kp C             &kp V        &kp B             &mkp MB1     &mkp MB2   &kp N       &kp M  &kp COMMA      &kp DOT  &lt 4 SLASH
-&kp LALT  &kp LCTRL  &mt LSHIFT SPACE  &lt 3 GRAVE  &mt LSHIFT SPACE  &lt 1 MINUS  &kp ENTER  &kp DELETE
+&kp Q     &kp W      &kp E             &kp R        &kp T             &kp Y        &kp U           &kp I       &kp O  &kp P
+&lt 2 A   &kp S      &kp D             &kp F        &kp G             &kp H        &td_vim_enter   &kp K       &kp L  &kp SEMICOLON
+&kp Z     &kp X      &kp C             &kp V        &kp B             &mkp MB1     &mkp MB2        &kp N       &kp M  &kp COMMA      &kp DOT  &lt 4 SLASH
+&kp LALT  &kp LCTRL  &mt LSHIFT SPACE  &lt 3 GRAVE  &mt LSHIFT SPACE  &lt 1 MINUS  &kp ENTER       &kp DELETE
             >;
         };
 
@@ -170,6 +231,16 @@
 &cust_cfg CCFG_SDIV_DN  &cust_cfg CCFG_SDIV_UP  &cust_cfg CCFG_SCRH_TOG  &cust_cfg CCFG_SCRV_TOG  &none                     &bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none
 &cust_cfg CCFG_SAVE     &cust_cfg CCFG_RESET    &none                    &none                    &none                     &none         &none           &bootloader   &none         &none         &none  &none
 &trans                  &trans                  &trans                   &trans                   &trans                    &trans        &trans          &trans
+            >;
+        };
+
+        layer_vim {
+            display-name = "VIM";
+            bindings = <
+&none   &kp LC(RIGHT)  &kp END   &none    &none         &vim_yy   &kp LC(Z)  &to 0   &vim_o     &kp LC(V)
+&vim_A  &kp HOME       &vim_dd   &none    &none         &kp LEFT  &kp DOWN   &kp UP  &kp RIGHT  &none
+&none   &kp DEL        &none     &none    &kp LC(LEFT)  &none     &none      &none   &none      &none      &none  &none
+&none   &none          &vim_I    &vim_a   &none         &none     &to 0      &none
             >;
         };
     };

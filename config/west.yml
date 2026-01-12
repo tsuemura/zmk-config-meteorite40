@@ -11,21 +11,21 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: iwk7273
-      revision: main
+      revision: b1f7de2
     - name: zmk-feature-sensor_rotation
       remote: iwk7273
-      revision: main
+      revision: fae8988
     - name: zmk-feature-xy_clipper
       remote: iwk7273
-      revision: main
+      revision: 1e9a795
     - name: zmk-feature-scaling
       remote: iwk7273
-      revision: main
+      revision: 6a11369
     - name: zmk-smart-toggle
       remote: iwk7273
-      revision: main
+      revision: 6a5ce31
     - name: zmk-feature-meteorite-config
       remote: iwk7273
-      revision: main
+      revision: 0318fb3
   self:
     path: config

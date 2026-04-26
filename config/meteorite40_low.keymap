@@ -153,6 +153,12 @@
             bindings = <&kp LS(LG(S))>;
             key-positions = <25 26>;
         };
+
+        l_semi_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <18 19>; /* L + ; */
+            layers = <0>;
+        };
     };
 
     keymap {

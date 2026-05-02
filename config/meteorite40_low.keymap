@@ -30,12 +30,12 @@
         lt_emacs: lt_emacs {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <0>;
             bindings = <&mo>, <&kp>;
-            display-name = "Emacs layer-tap (aggressive)";
+            display-name = "Emacs layer-tap (tap-preferred, no prior-idle)";
         };
 
         mck_mt: mck_mt {
